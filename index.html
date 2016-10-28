@@ -18,8 +18,34 @@
   <!-- BODY -->
   <body>
     <div class="container">
-      <h1>This is the stocks app!</h1>
-    </div>
+      <!-- Account information -->
+      <div class="jumbotron">
+        <h1>Hello, Petru!</h1>
+
+        <p id="currency">
+          <span class="label label-primary">Currency</span>
+        </p>
+        <p id="amount">
+          <span class="label label-primary">Amount</span>
+        </p>
+      </div>
+
+      <!-- Sell currency -->
+      <div id="sellBar" class="input-group input-group-lg">
+        <span class="input-group-addon" id="sellAddOn"></span>
+
+        <input type="number" id="sellInput" class="form-control" aria-describedby="helpBlock" placeholder="Amount" autofocus>
+
+        <span class="input-group-btn">
+          <button id="sellButt" class="btn btn-danger" type="button" onclick="handleSellButt()">Sell</button>
+        </span>
+      </div> <!-- /input-group -->
+      <span id="helpBlock" class="help-block">Enter the amount and press <strong>sell</strong>!</span>
+
+      <!-- No input alert -->
+      <div id="emptyAlert" class="alert alert-warning" role="alert">Please fill in the amount and then press <strong>sell</strong>!</div>
+
+    </div> <!-- /page container -->
 
 
     <!-- Scripts -->
