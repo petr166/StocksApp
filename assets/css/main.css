@@ -1,3 +1,9 @@
-.alert{
-    display: none;
+.alert {
+  display: none;
+}
+
+.infoLabel {
+  font-size: 110%;
+  display: inline-block;
+  width: 130px;
 }

@@ -22,11 +22,13 @@
       <div class="jumbotron">
         <h1>Hello, Petru!</h1>
 
-        <p id="currency">
-          <span class="label label-primary">Currency</span>
+        <p>
+          <span class="label label-primary infoLabel">Currency</span>
+          <span id="currency"></span>
         </p>
-        <p id="amount">
-          <span class="label label-primary">Amount</span>
+        <p>
+          <span class="label label-primary infoLabel">Balance</span>
+          <span id="balance"></span>
         </p>
       </div>
 
@@ -42,8 +44,22 @@
       </div> <!-- /input-group -->
       <span id="helpBlock" class="help-block">Enter the amount and press <strong>sell</strong>!</span>
 
+      <!-- Success alert -->
+      <div id="successSellAlert" class="alert alert-success fade in" role="alert">
+        <strong>Your sell offer was succesfuly placed!</strong>
+      </div>
+      <!-- Low balance alert -->
+      <div id="lowSellAlert" class="alert alert-danger fade in" role="alert">
+        Your balance is too <strong>low</strong> to place this sell offer!
+      </div>
       <!-- No input alert -->
-      <div id="emptyAlert" class="alert alert-warning" role="alert">Please fill in the amount and then press <strong>sell</strong>!</div>
+      <div id="emptySellAlert" class="alert alert-warning fade in" role="alert">
+        Please make sure you fill the <strong>amount</strong> for the sell offer!
+      </div>
+      <!-- Sell fail alert -->
+      <div id="failSellAlert" class="alert alert-danger fade in" role="alert">
+        The transaction <strong>failed</strong>! Please try again later!
+      </div>
 
     </div> <!-- /page container -->
 
