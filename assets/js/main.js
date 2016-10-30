@@ -1,7 +1,6 @@
 var apiURL = 'http://52.57.228.6/man2API/php/BankPhp.php';
 var apiKEY = 'fbecdb97d0ce2bc1f0a69d3e52562cd1';
 var globBalance = 0;
-var globCurrency = '';
 
 // account information req: ~?what=account_info&apikey={key}
 function reqAccountInfo() {
@@ -68,16 +67,12 @@ $(document).ready(function () {
 function handleSellButt() {
   if ($.trim($('#sellInput').val()).length) {
     var amount = Number($('#sellInput').val());
-    console.log("amount: " + amount);
-    console.log("globBalance: " + globBalance);
 
     if (amount <= globBalance) {
-      console.log("wrong calc");
       reqSellOffer(amount);
       $('#sellInput').val('');
     }
     else {
-      console.log("good calc");
       $('#lowSellAlert').show();
       $('#sellInput').val('');
       setTimeout(function() {$('#lowSellAlert').hide();}, 4000);
@@ -89,6 +84,7 @@ function handleSellButt() {
     setTimeout(function() {$('#emptySellAlert').hide();}, 4000);
   }
  }
+
 
  // sell currency req: ~?what=sell&amount={##}&apikey={key}
  function reqSellOffer(amount) {
