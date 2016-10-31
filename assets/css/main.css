@@ -12,3 +12,7 @@ body {
   display: inline-block;
   width: 150px;
 }
+
+.table-responsive {
+  max-height: 500px;
+}

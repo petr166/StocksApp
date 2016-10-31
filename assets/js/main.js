@@ -4,16 +4,26 @@ var globCurrency = 'PETR1066';
 var globBalance = 0;
 
 $(document).ready(function () {
+  // get the acc info and sell offers
   reqAccountInfo();
   reqGetOffers();
 
+  // update account-info and sell offers every 30 sec
   setInterval(reqAccountInfo, 30000);
   setInterval(reqGetOffers, 30000);
+
 
   //make "Enter" trigger the sell button
   $("#sellInput").keyup(function(event){
     if(event.keyCode == 13){
         $("#sellButt").click();
+    }
+  });
+
+  //make "Enter" trigger the exchange button
+  $("#exchangeInput").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#exchangeButt").click();
     }
   });
 });

@@ -17,28 +17,35 @@
 
   <!-- BODY -->
   <body>
+    <!-- Page container -->
     <div class="container">
-      <!-- Account information -->
+      <!-- Account information box -->
       <div class="jumbotron">
         <h1>Hello, Petru!</h1>
 
+        <!-- Currency label -->
         <p>
           <span class="label label-primary infoLabel">Currency</span>
           <span id="currency" class="account-info"></span>
         </p>
+
+        <!-- Balance label -->
         <p>
           <span class="label label-primary infoLabel">Balance</span>
           <span id="balance" class="account-info"></span>
         </p>
-      </div>
+      </div> <!-- /account info box -->
 
-      <!-- Sell currency -->
+      <!-- Sell currency box -->
       <div id="sellBox" class="jumbotron">
+        <!-- Input group -->
         <div id="sellBar" class="input-group input-group-lg">
           <span class="input-group-addon" id="sellAddOn"></span>
 
+          <!-- Sell input -->
           <input type="number" id="sellInput" class="form-control" aria-describedby="helpBlock" placeholder="Amount" autofocus>
 
+          <!-- Sell butt -->
           <span class="input-group-btn">
             <button id="sellButt" class="btn btn-danger" type="button" onclick="handleSellButt()">Sell</button>
           </span>
@@ -49,8 +56,10 @@
       <!-- Offers Table -->
       <div class="jumbotron">
         <h2>Offers table</h2>
+
         <div id="tableContainer" class="table-responsive">
           <table id="offersTable" class="table table-hover">
+            <!-- Table head -->
             <thead>
               <tr>
                 <th>ID</th>
@@ -61,27 +70,34 @@
               </tr>
             </thead>
 
+            <!-- Table body -->
             <tbody></tbody>
           </table>
         </div> <!-- /table-responsive -->
-    </div>
+    </div> <!-- /offers table -->
 
-    <!-- Exchange currency -->
+    <!-- Exchange box-->
     <div id="exchangeBox" class="jumbotron">
+      <!-- Input group -->
       <div id="exchangeBar" class="input-group input-group-lg">
         <span class="input-group-addon" id="exchangeAddOn"></span>
 
+        <!-- Exchange input -->
         <input type="text" id="exchangeInput" class="form-control" aria-describedby="helpBlock" placeholder="Currency">
 
+        <!-- Exchange button -->
         <span class="input-group-btn">
           <button id="exchangeButt" class="btn btn-info" type="button" onclick="handleExchangeButt()">Exchange</button>
         </span>
       </div> <!-- /input-group -->
+
       <span id="helpBlock" class="help-block">Enter the currency and press <strong>Exchange</strong> to get the exchange rate!</span>
+
+      <!-- Rate display -->
       <div id="exchangeRate">
         <h3></h3>
       </div>
-    </div>
+    </div> <!-- /exchange box -->
 
     </div> <!-- /page container -->
 

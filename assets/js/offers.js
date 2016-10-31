@@ -51,19 +51,22 @@ function reqGetOffers() {
 
        $('#offersTable tbody').html('');
 
+       //fill in the sell offers table
        offers.forEach(function(current) {
-         var offerID = current.id;
-         var row = $('<tr id="' + offerID + '">');
-         var keysByIndex = Object.keys(current);
+         var offerID = current.id; //store the offer ID
+         var row = $('<tr id="' + offerID + '">'); //create a new table row with the ID matching the offer ID
+         var keysByIndex = Object.keys(current); //store the keys indexes to loop through the object's fields
 
          for (var i = 0; i < keysByIndex.length; i++) {
-           var cellData = current[keysByIndex[i]];
-           row.append($("<td>" + cellData + "</td>"));
+           var cellData = current[keysByIndex[i]]; //store the cell data. EX: amount..
+           row.append($("<td>" + cellData + "</td>")); //append a new cell to the table row
          }
 
+         //create the buy button, action triggered to the specific offerID
          var buyButt = $('<button class="btn btn-success buy-butt" type="button" onclick="handleBuyButt(' + offerID + ')">Buy</button>');
          row.append(buyButt);
 
+         //append the new row to the table
          $('#offersTable tbody').append(row);
        })
     }

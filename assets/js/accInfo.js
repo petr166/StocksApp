@@ -37,9 +37,11 @@ function reqAccountInfo() {
        console.log("Account info object received:");
        console.log(jsonObj);
 
+       //store the currency and balance
        var currency = jsonObj.data[0].currency;
        var amount = jsonObj.data[0].amount;
 
+       //display account info
        $('#currency').html(" " + currency);
        $('#balance').html(" " + amount);
        $('#sellAddOn').html("<strong>" + currency + "</strong>");

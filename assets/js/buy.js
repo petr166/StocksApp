@@ -42,20 +42,23 @@ function handleBuyButt(offerID) {
        console.log("Buy object received:");
        console.log(jsonObj);
 
+       // select the offer row
        var row = $('#' + offerID);
 
        try {
          var responseCode = jsonObj.resp.code;
-         if (responseCode == 200) {
-           row.addClass('success');
+         if (responseCode == 200) { // server response OK
+           row.addClass('success'); // color the row in green
 
+           // update account info and sell offers
            setTimeout(reqGetOffers, 1500);
            setTimeout(reqAccountInfo, 1000);
          }
        }
-       catch(err) {
-         row.addClass('danger');
+       catch(err) { // bad response from the server
+         row.addClass('danger'); //color the row in red
 
+         // update account info and sell offers
          setTimeout(reqGetOffers, 1500);
          setTimeout(reqAccountInfo, 1000);
        }

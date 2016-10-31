@@ -43,14 +43,18 @@ function reqSellOffer(amount) {
      try {
        var responseCode = jsonObj.resp.code;
        if (responseCode == 200) { //the sell went ok
+         //show the alert
          var alert = createAlert('alert-success', '<strong>Your sell offer was succesfuly placed!</strong>');
          $('#sellBox').append(alert);
+
+         //update the account info and sell offers
          reqAccountInfo();
          setTimeout(reqGetOffers, 2000);
          setTimeout(function() {alert.hide();}, 4000);
        }
      }
-     catch(err) {
+     catch(err) { //bad server response
+       //show the alert
        var alert = createAlert('alert-danger', 'The transaction <strong>failed</strong>! Please try again later!');
        $('#sellBox').append(alert);
        setTimeout(function() {alert.hide();}, 4000);
@@ -61,14 +65,17 @@ function reqSellOffer(amount) {
 
 //SELL button click handle
 function handleSellButt() {
-  if ($.trim($('#sellInput').val()).length) {
+  if ($.trim($('#sellInput').val()).length) { //check the input box to be filled
+    //store the value
     var amount = Number($('#sellInput').val());
 
-    if (amount <= globBalance) {
-      reqSellOffer(amount);
+    if (amount <= globBalance) { //check if u have enough money to place this offer
+      reqSellOffer(amount); //place the sell offer
       $('#sellInput').val('');
     }
-    else {
+
+    else { //not enough money
+      //show the alert
       var alert = createAlert('alert-danger', 'Your balance is too <strong>low</strong> to place this sell offer!');
       $('#sellBox').append(alert);
       $('#sellInput').val('');
@@ -76,7 +83,8 @@ function handleSellButt() {
     }
   }
 
-  else {
+  else { //empty input box
+    //show the alert
     var alert = createAlert('alert-warning', 'Please make sure you fill the <strong>amount</strong> for the sell offer!');
     $('#sellBox').append(alert);
     setTimeout(function() {alert.hide()}, 4000);
