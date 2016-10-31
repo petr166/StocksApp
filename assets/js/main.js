@@ -76,15 +76,17 @@ function handleSellButt() {
       $('#sellInput').val('');
     }
     else {
-      $('#lowSellAlert').show();
+      var alert = createAlert('alert-danger', 'Your balance is too <strong>low</strong> to place this sell offer!');
+      $('#sellBox').append(alert);
       $('#sellInput').val('');
-      setTimeout(function() {$('#lowSellAlert').hide();}, 4000);
+      setTimeout(function() {alert.hide()}, 4000);
     }
   }
 
   else {
-    $('#emptySellAlert').show();
-    setTimeout(function() {$('#emptySellAlert').hide();}, 4000);
+    var alert = createAlert('alert-warning', 'Please make sure you fill the <strong>amount</strong> for the sell offer!');
+    $('#sellBox').append(alert);
+    setTimeout(function() {alert.hide()}, 4000);
   }
  }
 
@@ -131,16 +133,16 @@ function handleSellButt() {
       try {
         var responseCode = jsonObj.resp.code;
         if (responseCode == 200) { //the sell went ok
-          $('.alert').hide();
-          $('#successSellAlert').show();
+          var alert = createAlert('alert-success', '<strong>Your sell offer was succesfuly placed!</strong>');
+          $('#sellBox').append(alert);
           reqAccountInfo();
-          setTimeout(function() {$('#successSellAlert').hide();}, 4000);
+          setTimeout(function() {alert.hide();}, 4000);
         }
       }
       catch(err) {
-        $('.alert').hide();
-        $('#failSellAlert').show();
-        setTimeout(function() {$('#failSellAlert').hide();}, 4000);
+        var alert = createAlert('alert-danger', 'The transaction <strong>failed</strong>! Please try again later!');
+        $('#sellBox').append(alert);
+        setTimeout(function() {alert.hide();}, 4000);
       }
      }
    });
@@ -209,7 +211,7 @@ function handleSellButt() {
 
           var buyButt = $('<button class="btn btn-success" type="button" onclick="handleBuyButt(' + offerID + ')">Buy</button>');
           row.append(buyButt);
-          var successBuyAlert = $('<span id="successBuyAlert" class="alert alert-success fade in" role="alert"><strong>Success!</strong></span>');
+          var successBuyAlert = createAlert('alert-success', 'Congratulations! The offer was succesfuly bought!');
           row.append(successBuyAlert);
 
           $('#offersTable tbody').append(row);
@@ -312,10 +314,6 @@ function handleSellButt() {
 
         console.log("Buy object received:");
         console.log(jsonObj);
-
-        $('.alert').hide();
-        $('#successBuyAlert').show();
-        setTimeout(reqGetOffers(), 4000);
      }
    });
  }
