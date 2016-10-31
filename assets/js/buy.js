@@ -41,6 +41,12 @@ function handleBuyButt(offerID) {
 
        console.log("Buy object received:");
        console.log(jsonObj);
+
+       var row = $('#' + offerID);
+       row.addClass('success');
+
+       setTimeout(reqGetOffers, 1500);
+
     }
   });
 }

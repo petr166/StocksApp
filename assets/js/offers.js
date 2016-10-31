@@ -50,8 +50,10 @@ function reqGetOffers() {
        var offers = jsonObj.data;
 
        $('#offersTable tbody').html('');
+
        offers.forEach(function(current) {
-         var row = $("<tr>");
+         var offerID = current.id;
+         var row = $('<tr id="' + offerID + '">');
          var keysByIndex = Object.keys(current);
 
          for (var i = 0; i < keysByIndex.length; i++) {
@@ -59,12 +61,8 @@ function reqGetOffers() {
            row.append($("<td>" + cellData + "</td>"));
          }
 
-         var offerID = current.id;
-
-         var buyButt = $('<button class="btn btn-success" type="button" onclick="handleBuyButt(' + offerID + ')">Buy</button>');
+         var buyButt = $('<button class="btn btn-success buy-butt" type="button" onclick="handleBuyButt(' + offerID + ')">Buy</button>');
          row.append(buyButt);
-         var successBuyAlert = createAlert('alert-success', 'Congratulations! The offer was succesfuly bought!');
-         row.append(successBuyAlert);
 
          $('#offersTable tbody').append(row);
        })
