@@ -46,6 +46,7 @@ function reqSellOffer(amount) {
          var alert = createAlert('alert-success', '<strong>Your sell offer was succesfuly placed!</strong>');
          $('#sellBox').append(alert);
          reqAccountInfo();
+         setTimeout(reqGetOffers, 2000);
          setTimeout(function() {alert.hide();}, 4000);
        }
      }

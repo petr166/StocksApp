@@ -7,6 +7,9 @@ $(document).ready(function () {
   reqAccountInfo();
   reqGetOffers();
 
+  setInterval(reqAccountInfo, 30000);
+  setInterval(reqGetOffers, 30000);
+
   //make "Enter" trigger the sell button
   $("#sellInput").keyup(function(event){
     if(event.keyCode == 13){

@@ -43,9 +43,22 @@ function handleBuyButt(offerID) {
        console.log(jsonObj);
 
        var row = $('#' + offerID);
-       row.addClass('success');
 
-       setTimeout(reqGetOffers, 1500);
+       try {
+         var responseCode = jsonObj.resp.code;
+         if (responseCode == 200) {
+           row.addClass('success');
+
+           setTimeout(reqGetOffers, 1500);
+           setTimeout(reqAccountInfo, 1000);
+         }
+       }
+       catch(err) {
+         row.addClass('danger');
+
+         setTimeout(reqGetOffers, 1500);
+         setTimeout(reqAccountInfo, 1000);
+       }
 
     }
   });
