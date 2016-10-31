@@ -33,39 +33,41 @@
       </div>
 
       <!-- Sell currency -->
-      <div id="sellBar" class="input-group input-group-lg">
-        <span class="input-group-addon" id="sellAddOn"></span>
+      <div class="jumbotron">
+        <div id="sellBar" class="input-group input-group-lg">
+          <span class="input-group-addon" id="sellAddOn"></span>
 
-        <input type="number" id="sellInput" class="form-control" aria-describedby="helpBlock" placeholder="Amount" autofocus>
+          <input type="number" id="sellInput" class="form-control" aria-describedby="helpBlock" placeholder="Amount" autofocus>
 
-        <span class="input-group-btn">
-          <button id="sellButt" class="btn btn-danger" type="button" onclick="handleSellButt()">Sell</button>
-        </span>
-      </div> <!-- /input-group -->
-      <span id="helpBlock" class="help-block">Enter the amount and hit <strong>"Enter"</strong> or press <strong>Sell</strong> to post a sell offer!</span>
+          <span class="input-group-btn">
+            <button id="sellButt" class="btn btn-danger" type="button" onclick="handleSellButt()">Sell</button>
+          </span>
+        </div> <!-- /input-group -->
+        <span id="helpBlock" class="help-block">Enter the amount and hit <strong>"Enter"</strong> or press <strong>Sell</strong> to post a sell offer!</span>
 
-      <!-- Success alert -->
-      <div id="successSellAlert" class="alert alert-success fade in" role="alert">
-        <strong>Your sell offer was succesfuly placed!</strong>
-      </div>
-      <!-- Low balance alert -->
-      <div id="lowSellAlert" class="alert alert-danger fade in" role="alert">
-        Your balance is too <strong>low</strong> to place this sell offer!
-      </div>
-      <!-- No input alert -->
-      <div id="emptySellAlert" class="alert alert-warning fade in" role="alert">
-        Please make sure you fill the <strong>amount</strong> for the sell offer!
-      </div>
-      <!-- Sell fail alert -->
-      <div id="failSellAlert" class="alert alert-danger fade in" role="alert">
-        The transaction <strong>failed</strong>! Please try again later!
-      </div>
+        <!-- Success alert -->
+        <div id="successSellAlert" class="alert alert-success fade in" role="alert">
+          <strong>Your sell offer was succesfuly placed!</strong>
+        </div>
+        <!-- Low balance alert -->
+        <div id="lowSellAlert" class="alert alert-danger fade in" role="alert">
+          Your balance is too <strong>low</strong> to place this sell offer!
+        </div>
+        <!-- No input alert -->
+        <div id="emptySellAlert" class="alert alert-warning fade in" role="alert">
+          Please make sure you fill the <strong>amount</strong> for the sell offer!
+        </div>
+        <!-- Sell fail alert -->
+        <div id="failSellAlert" class="alert alert-danger fade in" role="alert">
+          The transaction <strong>failed</strong>! Please try again later!
+        </div>
+       </div>
 
       <!-- Offers Table -->
-      <h2>Offers table</h2>
       <div class="jumbotron">
+        <h2>Offers table</h2>
         <div id="tableContainer" class="table-responsive">
-          <table id="offersTable" class="table table-condensed table-hover">
+          <table id="offersTable" class="table table-hover">
             <thead>
               <tr>
                 <th>ID</th>
