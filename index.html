@@ -42,7 +42,7 @@
           <button id="sellButt" class="btn btn-danger" type="button" onclick="handleSellButt()">Sell</button>
         </span>
       </div> <!-- /input-group -->
-      <span id="helpBlock" class="help-block">Enter the amount and hit <strong>"Enter"</strong> or press <strong>Sell</strong>!</span>
+      <span id="helpBlock" class="help-block">Enter the amount and hit <strong>"Enter"</strong> or press <strong>Sell</strong> to post a sell offer!</span>
 
       <!-- Success alert -->
       <div id="successSellAlert" class="alert alert-success fade in" role="alert">
@@ -79,6 +79,23 @@
             <tbody></tbody>
           </table>
         </div> <!-- /table-responsive -->
+    </div>
+
+    <!-- Exchange currency -->
+    <div class="jumbotron">
+      <div id="exchangeBar" class="input-group input-group-lg">
+        <span class="input-group-addon" id="exchangeAddOn"></span>
+
+        <input type="text" id="exchangeInput" class="form-control" aria-describedby="helpBlock" placeholder="Currency">
+
+        <span class="input-group-btn">
+          <button id="exchangeButt" class="btn btn-info" type="button" onclick="handleExchangeButt()">Exchange</button>
+        </span>
+      </div> <!-- /input-group -->
+      <span id="helpBlock" class="help-block">Enter the currency and press <strong>Exchange</strong> to get the exchange rate!</span>
+      <div id="exchangeRate">
+        <h3></h3>
+      </div>
     </div>
 
     </div> <!-- /page container -->
