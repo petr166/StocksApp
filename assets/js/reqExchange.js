@@ -35,16 +35,13 @@ function reqExchange(cellID, toCurrency) {
         }
         */
 
-         console.log("Exchange object received:");
-         console.log(jsonObj);
-
          //store the exchange rate
          var exchange_rate = jsonObj.data.amount;
          var rate = Number(exchange_rate/100).toFixed(2);
 
          // select the offer cell
          var td = $('#' + cellID);
-         td.append(rate);
+         td.html(rate);
 
          if (rate > 1) {
            td.addClass('verde');

@@ -55,17 +55,17 @@ function reqGetOffers() {
        //fill in the sell offers table
        offers.forEach(function(current) {
          var offerID = current.id; //store the offer ID
-         var offerAmount = Number(current.amount).toFixed(2);
+         var offerAmount = Number(current.amount).toFixed(2); //store the offer amount
          var row = $('<tr id="' + offerID + '">'); //create a new table row with the ID matching the offer ID
          var keysByIndex = Object.keys(current); //store the keys indexes to loop through the object's fields
 
-         row.append($("<td>" + offerID + "</td>"));
-         row.append($("<td>" + offerAmount + "</td>")); //append a new cell to the table row
-         row.append($("<td>" + current.currency + "</td>"));
+         row.append($("<td>" + offerID + "</td>")); //append the ID cell
+         row.append($("<td>" + offerAmount + "</td>")); //append the amount cell
+         row.append($("<td>" + current.currency + "</td>")); //append the currency cell
 
-         var cellID = 'rate_' + offerID;
-         row.append($('<td id="' + cellID + '"></td>'));
-         reqExchange(cellID, current.currency);
+         var cellID = 'rate_' + offerID; //create an ID for the rate cell(used to display the rate)
+         row.append($('<td id="' + cellID + '"></td>')); //append the rate cell
+         reqExchange(cellID, current.currency); //request the specific exchange rate
 
          //create the buy button, action triggered to the specific offerID
          var buyButt = $('<button class="btn btn-success buy-butt" type="button" onclick="handleBuyButt(' + offerID + ')">Buy</button>');
