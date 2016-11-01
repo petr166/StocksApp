@@ -9,8 +9,8 @@ $(document).ready(function () {
   reqGetOffers();
 
   // update account-info and sell offers every 30 sec
-  setInterval(reqAccountInfo, 30000);
-  setInterval(reqGetOffers, 30000);
+  setInterval(reqAccountInfo, 10000);
+  setInterval(reqGetOffers, 10000);
 
 
   //make "Enter" trigger the sell button

@@ -48,6 +48,7 @@ function reqGetOffers() {
        console.log(jsonObj);
 
        var offers = jsonObj.data;
+       offers = offers.reverse();
 
        $('#offersTable tbody').html('');
 
