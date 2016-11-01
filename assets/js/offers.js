@@ -55,13 +55,17 @@ function reqGetOffers() {
        //fill in the sell offers table
        offers.forEach(function(current) {
          var offerID = current.id; //store the offer ID
+         var offerAmount = Number(current.amount).toFixed(2);
          var row = $('<tr id="' + offerID + '">'); //create a new table row with the ID matching the offer ID
          var keysByIndex = Object.keys(current); //store the keys indexes to loop through the object's fields
 
-         for (var i = 0; i < keysByIndex.length; i++) {
-           var cellData = current[keysByIndex[i]]; //store the cell data. EX: amount..
-           row.append($("<td>" + cellData + "</td>")); //append a new cell to the table row
-         }
+         row.append($("<td>" + offerID + "</td>"));
+         row.append($("<td>" + offerAmount + "</td>")); //append a new cell to the table row
+         row.append($("<td>" + current.currency + "</td>"));
+
+         var cellID = 'rate_' + offerID;
+         row.append($('<td id="' + cellID + '"></td>'));
+         reqExchange(cellID, current.currency);
 
          //create the buy button, action triggered to the specific offerID
          var buyButt = $('<button class="btn btn-success buy-butt" type="button" onclick="handleBuyButt(' + offerID + ')">Buy</button>');

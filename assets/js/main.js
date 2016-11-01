@@ -8,7 +8,7 @@ $(document).ready(function () {
   reqAccountInfo();
   reqGetOffers();
 
-  // update account-info and sell offers every 30 sec
+  // update account-info and sell offers every 10 sec
   setInterval(reqAccountInfo, 10000);
   setInterval(reqGetOffers, 10000);
 

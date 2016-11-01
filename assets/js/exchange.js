@@ -48,7 +48,7 @@ function handleExchangeButt() {
            if (responseCode == 200) { //server response OK
              //store the exchange rate
              var exchange_rate = jsonObj.data.amount;
-             var rate = Number(exchange_rate/100).toFixed(6);
+             var rate = Number(exchange_rate/100).toFixed(2);
 
              //display the rate
              $("#exchangeRate h3").html("1 " + globCurrency + " = " + rate + " " + toCurrency);

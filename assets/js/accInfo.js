@@ -39,11 +39,12 @@ function reqAccountInfo() {
 
        //store the currency and balance
        var currency = jsonObj.data[0].currency;
-       var amount = jsonObj.data[0].amount;
+       var amount = Number(jsonObj.data[0].amount).toFixed(2);
+       console.log("AMOUNT: "+ amount);
 
        //display account info
-       $('#currency').html(" " + currency);
-       $('#balance').html(" " + amount);
+       $('#currency').html(currency);
+       $('#balance').html(amount);
        $('#sellAddOn').html("<strong>" + currency + "</strong>");
        $('#exchangeAddOn').html("<strong>" + currency + "</strong>" + " to");
        globBalance = Number(amount);

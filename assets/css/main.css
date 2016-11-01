@@ -16,3 +16,11 @@ body {
 .table-responsive {
   max-height: 500px;
 }
+
+.verde {
+  background-color: green;
+}
+
+.rosu {
+  background-color: red;
+}
